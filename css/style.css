@@ -1,0 +1,18 @@
+body{
+    background: silver;
+    
+}
+.jumbotron{
+    height: 30%;
+}
+button{
+    background: gold;
+    font-family: arial;
+}
+h1{
+    text-align: center;
+}
+h5 {
+    font-family: cursive;
+    font-size: 5%;
+}
