@@ -1,9 +1,29 @@
-body{
-    background: silver;
-    
+html,body {
+    height: 100%;
 }
+
+body{
+  
+    background-image: url("http://www.juiced2go.com/wp-content/uploads/2016/11/938630446-slide01background.jpg");
+   
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat; 
+}
+
 .jumbotron{
     height: 30%;
+}
+.Navbar{
+    font-family: 'Tangerine', cursive;
+    background-color: red;
+    font-size: 30px;
+}
+.navbar-brand{
+    font-size: 30px;
+}
+.navbar-inverse{
+    background-color: red;
 }
 button{
     background: gold;
@@ -14,12 +34,12 @@ h1{
 }
 h5 {
     font-family: cursive;
-    font-size: 5%;
+    font-size: 50%;
 }
 
-carousel{
-    background: silver;
-    margin-top: 20px;
+.carousel{
+    background: transparent;
+    margin-top: 5px;
 }
 .carousel .item{
     min-height: 280px; /* Prevent carousel from being distorted if for some reason image doesn't load */
@@ -28,5 +48,31 @@ carousel{
     margin: 0 auto; /* Align slide image horizontally center */
 }
 .bs-example{
-	margin: 20px;
+    margin: 20px;
 }
+table, th, td {
+    border: 1px solid black;
+    width: 80%;
+  }
+  footer{
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+      background-color: red;
+      text-align-last: center
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
