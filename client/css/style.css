@@ -40,6 +40,7 @@ h5 {
 .carousel{
     background: transparent;
     margin-top: 5px;
+
 }
 .carousel .item{
     min-height: 280px; /* Prevent carousel from being distorted if for some reason image doesn't load */
@@ -61,6 +62,26 @@ table, th, td {
       background-color: red;
       text-align-last: center
   }
+.card{
+    text-align: center;
+    width: 100%;
+    color: black;
+    background-color: gold;
+}
+.table{
+    background: black;
+    border: 1px solid white;
+    color: white;
+
+}
+.card-img-top{
+    width: 20%;
+    height: 10%;
+}
+.entry-content img { 
+    border: silver; 
+    
+}
 
 
 
