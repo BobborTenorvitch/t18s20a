@@ -2,21 +2,24 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const eventSchema = new Schema({
-    id: {
-        type: Number,
-        required: true
-    },
+    // id: {
+    //     type: Number,
+    //     required: true
+    // },
     date:{
         type:Date,
         required: true
     },
-    locationn:{
+    location:{
         type:STRING,
         required: true
     },
-    tickets:[{
+    tickets:{
         total:  Number,
         reserved: Number,
         price: Float
-    }]
+    }
 });
+
+const Event = mongoose.model("Event",eventSchema);
+module.exports = Event;
