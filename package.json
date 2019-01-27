@@ -1,0 +1,28 @@
+{
+  "name": "t18s20a",
+  "version": "1.0.0",
+  "description": "TSA project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BobborTenorvitch/t18s20a.git"
+  },
+  "keywords": [
+    "ExpressMongoose"
+  ],
+  "author": "Pranav",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BobborTenorvitch/t18s20a/issues"
+  },
+  "homepage": "https://github.com/BobborTenorvitch/t18s20a#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mongo": "^0.1.0",
+    "mongoose": "^5.4.7",
+    "request": "^2.88.0"
+  }
+}
