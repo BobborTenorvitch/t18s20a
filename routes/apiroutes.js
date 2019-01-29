@@ -1,9 +1,9 @@
 var db = require("../models");
 
-module.export = function(app){
+module.exports = function(app){
     // defines a route to retrieve data from the events table
-    app.get("/events",function(req,res){ 
-         db.Event.findALL({})
+    app.get("/api/events",function(req,res){ 
+         db.Event.findAll({})
          .then(function(results){
              res.json(results);
          })
@@ -12,7 +12,7 @@ module.export = function(app){
          })
     });
     // route for discussion board
-    app.get("/board",function(req,res){ 
+    app.get("/api/board",function(req,res){ 
         db.Board.findALL({})
         .then(function(results){
             res.json(results);
@@ -21,7 +21,7 @@ module.export = function(app){
             console.log("Error in getting discussion board records",err)
         })
    });
-   app.get("/store",function(req,res){ 
+   app.get("/api/store",function(req,res){ 
     db.Store.findALL({})
     .then(function(results){
         res.json(results);

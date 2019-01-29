@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+const stypes = mongoose.Schema.Types;
 
 const eventSchema = new Schema({
     // id: {
@@ -11,13 +12,17 @@ const eventSchema = new Schema({
         required: true
     },
     location:{
-        type:STRING,
+        type: String,
         required: true
     },
     tickets:{
         total:  Number,
         reserved: Number,
-        price: Float
+        price: Number
+    },
+    createdAt : {
+        type:Date,
+        default: Date.now
     }
 });
 

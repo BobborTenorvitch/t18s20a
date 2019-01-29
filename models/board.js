@@ -14,7 +14,11 @@ const boardSchema = new Schema({
         username: String,
         comment: String,
         date: Number
-    }]
+    }],
+    createdAt:{
+        type:Date,
+        default:Date.now
+    }
     
 });
 

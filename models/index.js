@@ -1,5 +1,5 @@
 module.exports ={
-    Event : require('./events'),
+    Event : require('./event'),
     Board : require('./board'),
-    Store : require('./stores')
+    Store : require('./store')
 }

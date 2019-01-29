@@ -7,11 +7,20 @@ h3{
 body{
     background: silver;
 }
-.center {
+.GHS {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 20%;
+  width: 15%;
+}
+.teacher{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 10%;
+}
+.names{
+  text-align: center;
 }
 /* Style the header with a grey background and some padding */
 .header {

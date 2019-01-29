@@ -2,22 +2,24 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const storeSchema = new Schema({
-    // id: {
-    //     type: Number,
-    //     required: true
-    // },
+    productid: {
+        type: String,
+        required: true,
+        unnique: true
+    },
     category: {
         type: String,
         required: true,
     },
     description:{
-        type:STRING,
+        type:String,
         required: true
     },
     item:{
         Quantity:  Number,
-        Avaliable: boolean,
-        price: Float
+        Avaliable: Boolean,
+        price:  Number
+
     }
 });
 
