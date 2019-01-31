@@ -23,6 +23,7 @@
     "express": "^4.16.4",
     "mongo": "^0.1.0",
     "mongoose": "^5.4.7",
+    "path": "^0.12.7",
     "request": "^2.88.0"
   },
   "devDependencies": {

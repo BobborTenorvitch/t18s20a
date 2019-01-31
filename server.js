@@ -1,23 +1,25 @@
 var express = require ("express");
 var mongoose = require("mongoose");
 
-var PORT = 8080;
+var PORT = 3000;
 
 var app = express();
 
 app.use(express.urlencoded({extended: true}));
-app.use(express.static("client"));
+// app.use(express.static("public"));
+
 
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_UI || "mongodb://localhost/reactreadinglist",function(err,results){
-    if (err) throw err;
-     console.log("Mongoose Connected");
-    insertRecords();
-});
+mongoose.connect(process.env.MONGODB_UI || "mongodb://localhost/bandsInTown",        
+   () =>{
+   
+        console.log("Mongoose Connected");
+        insertRecords();}
+);
 
 require('./routes/apiroutes.js')(app);
-require('./routes/apiroutes.js')(app);
+require('./routes/htmlroutes.js')(app);
 
 function insertRecords(){
    var date1 =  new Date();
