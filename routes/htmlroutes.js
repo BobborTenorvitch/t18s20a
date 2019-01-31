@@ -2,17 +2,17 @@ var path = require("path");
 
 module.exports = function(app){
     app.get("/band",function(req,res){
-           console.log("band")
-           res.sendFile(path.join(__dirname,"/html/Band.html"));
-    }),
+           console.log("/ band")
+           res.sendFile(path.join(__dirname,"../public/html/Band.html"));
+    });
     app.get("/about",function(req,res){
-        cosnole.log("about")
-        res.sendFile(path.join(__dirname,"/html/About.html"));
-    }),
+        console.log("about")
+        res.sendFile(path.join(__dirname,"../public/html/About.html"));
+    });
    app.get("/store",function(req,res){
        console.log("store")
-    res.sendFile(path.join(__dirname,"/html/Store.html"));
-    }),
+    res.sendFile(path.join(__dirname,"../public//html/Store.html"));
+    });
     app.get("/tour",function(req,res){
         console.log("tour")
         res.sendFile(path.join(__dirname,"../public/html/TourDates.html"));
@@ -23,9 +23,14 @@ module.exports = function(app){
     }); 
     app.get("/",function(req,res){
         console.log("/ route");
-        res.sendFile(path.join(__dirname,"../public/html/Forum.html"));
+        res.sendFile(path.join(__dirname,"../public/html/index.html"));
     });
     app.get("/TSA",function(req,res){
-        res.sendFile("/CTEPage/TSA.html");
-    })
+        res.sendFile(path.join(__dirname,"../public/html/TSA.html"));
+    });
+    app.get("/*",function(req,res){
+        console.log("/ route");
+        res.sendFile(path.join(__dirname,"../public/html/index.html"));
+    });
+
 }
