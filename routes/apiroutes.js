@@ -3,17 +3,19 @@ var db = require("../models");
 module.exports = function(app){
     // defines a route to retrieve data from the events table
     app.get("/api/events",function(req,res){ 
-         db.Event.findAll({})
+        console.log("the api rpoute");
+         db.Event.find({})
          .then(function(results){
+             console.log("The api events results",results);
              res.json(results);
          })
          .catch(function(err){
-             console.log("Error in getting event records",err)
+             console.log("Error in getting event records",err);
          })
     });
     // route for discussion board
     app.get("/api/board",function(req,res){ 
-        db.Board.findALL({})
+        db.Board.find({})
         .then(function(results){
             res.json(results);
         })
@@ -22,7 +24,7 @@ module.exports = function(app){
         })
    });
    app.get("/api/store",function(req,res){ 
-    db.Store.findALL({})
+    db.Store.find({})
     .then(function(results){
         res.json(results);
     })

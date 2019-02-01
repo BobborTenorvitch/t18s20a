@@ -7,11 +7,4 @@ $(document).ready(function(){
         console.log("The events are",results);
     });
 
- 
-
-
-
-
-
-
 });
