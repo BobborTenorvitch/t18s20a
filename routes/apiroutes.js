@@ -28,7 +28,7 @@ module.exports = function (app) {
 
 
     app.get("/api/store", function (req, res) {
-        db.Store.find({})
+        db.Product.find({})
             .then(function (results) {
                 res.json(results);
             })

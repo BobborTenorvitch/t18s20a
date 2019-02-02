@@ -15,14 +15,14 @@ app.use(express.static(__dirname + '/public'));
 
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_UI || "mongodb://localhost/bandsInTown1", { useNewUrlParser: true },
+mongoose.connect(process.env.MONGODB_UI || "mongodb://localhost/bandsInTown", { useNewUrlParser: true },
     () => {
 
         console.log("Mongoose Connected");
-        deleteRecords();
-        insertEventRecords();
-        insertBoardSeed();
-        insertstoreseed();
+        //deleteRecords();
+        //insertEventRecords();
+        //insertBoardSeed();
+        //insertStoreseed();
     });
 
 require('./routes/apiroutes.js')(app);
@@ -170,16 +170,24 @@ function insertEventRecords() {
         }
     }
     ]
-    db.Event.insertMany(eventSeed)
-    .then(data => {
-        console.log("Inserted Store records", data);
-    })
-    .catch(err => {
-        console.log("Error in inserting records", err)
-    });
-} //End InnsertEventRecords
     
-function insertstoreseed(){
+        db.Event.insertMany(eventSeed)
+        .then(data => {
+         
+            console.log("Inserted Store records", data);
+        })
+        .catch(err => {
+    
+            console.log("Error in inserting records", err);
+            
+        });
+    
+    
+} //End InsertEventRecords
+
+//function eventInsert()
+    
+function insertStoreseed(){
     //Store Seed
     const storeSeed = [
         {

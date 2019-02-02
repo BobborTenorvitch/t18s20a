@@ -95,11 +95,12 @@ table{
 
 .storecard{
     width: 20%;
+    /* float: right; */
 }
 
 #catalogue{
-    display: flex;
-    justify-content: space-around;
+    /* display: flex; */
+    /* justify-content: space-around; */
 }
 
 img{

@@ -128,12 +128,8 @@ const eventSeed = [{
  }}    
 ];
 db.Event.remove({})
-   .then(() => {
-       console.log("event collections removed");
-     
-        db.Event.collection.insertMany(eventSeed)
-       
-     }).then(data => {
+   .then(() => db.Event.collection.insertMany(eventSeed)
+    ).then(data => {
         console.log(data,"New records inserted in Events");
         process.exit(0);
     }).catch(err => {

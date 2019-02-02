@@ -20,14 +20,7 @@ const storeSeed = [
             Available: true,
             price: 17
         }},
-    {   productId:"Dream Land",
-        category: "DVD",
-        description: "Release on Aug 20 2018",
-        item: {
-            Quantity : 300,
-            Available: true,
-            price: 19
-        }},
+
     {   productId:"Lost Town",
         category: "DVD",
         description: "Release on Feb 10 2017",
@@ -36,7 +29,7 @@ const storeSeed = [
             Available: true,
             price: 15
         }},
-    {   productId:"Rainnbow",
+    {   productId:"Rainbow",
         category: "DVD",
         description: "Release on Oct 10 2017",
         item: {
@@ -44,7 +37,7 @@ const storeSeed = [
             Available: true,
             price: 15
         }},
-    {   productId:"Lost Town",
+    {   productId:"Mystic Town",
         category: "DVD",
         description: "Release on Dec 10 2015",
         item: {
@@ -53,7 +46,7 @@ const storeSeed = [
             price: 15
         }},
     {
-        productId:"Fantastic",
+        productId:"Fantastic4",
         category: "DVD",
         description: "Release on Mar 10 2016",
         item: {
@@ -63,7 +56,7 @@ const storeSeed = [
         }
     },
     {
-        productId:"Grand days",
+        productId:"100 Grand days",
         category: "DVD",
         description: "Release on Feb 19 2015",
         item: {
@@ -73,7 +66,7 @@ const storeSeed = [
         },
     },
     {
-        productId:"Yeeterson",
+        productId:"Yeeterson Originals",
         category: "POSTER",
         description: "Dimensions 25.7 cm * 37.8cm",
         item: {
@@ -113,7 +106,7 @@ const storeSeed = [
         },
     },
     {
-            productId:"Sunshine - Poster",
+            productId:"Sunshine! - Poster",
             category: "POSTER",
             description: "Dimensions 2' 5' * 3' 0' ",
             item: {
@@ -125,10 +118,9 @@ const storeSeed = [
 ]
 
 db.Store.remove({})
-   .then( () => {
-       console.log("Store - Collections removed")
-        db.Store.collection.bulkWrite(storeSeed)
-   }).then(data => {
+   .then( () => 
+        db.Store.collection.insertMany(storeSeed)
+    ).then((data) => {
         console.log(data,"New records inserted in Store");
         process.exit(0);
     }).catch(err => {

@@ -6,7 +6,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/bandsInTown", f
         console.log("Mongoose connection error", err);
     }
     else {
-        console.log("Mongoose connnection established")
+        console.log("Mongoose connection established")
     }
 });
 const boardSeed = [
@@ -54,11 +54,10 @@ const boardSeed = [
 ]
 db.Board
     .deleteMany({})
-    .then(() => {
-        console.log("Board collection removed");
-
-        db.Board.collection.bulkWrite(boardSeed)
-    })
+    .then(() =>
+  
+        db.Board.collection.insertMany(boardSeed)
+    )
     .then(data => {
         console.log(data, "Records inserted in Board");
         process.exit(0);
