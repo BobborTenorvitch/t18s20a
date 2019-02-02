@@ -53,7 +53,7 @@ const boardSeed = [
     },
 ]
 db.Board
-    .remove({})
+    .deleteMany({})
     .then(() => {
         console.log("Board collection removed");
 
