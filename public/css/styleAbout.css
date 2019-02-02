@@ -1,0 +1,53 @@
+body{
+    background-image: url(../assets/Background3.png);
+    background-size: cover;
+}
+h1{
+    text-align: center;
+    font-family: cursive;
+    font-size: 350%;
+}
+ul{
+    font-size: 150%;
+}
+h2{
+    font-family: monospace;
+    font-size: 90%;
+    
+}
+.img-people{
+    width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+h3{
+    font-size: 100%;
+    text-align: center;
+}
+h4{
+    font-family: monospace;
+    font-size: 30px;
+}
+.Navbar{
+    font-family: 'Tangerine', cursive;
+    background-color: red;
+    font-size: 20px;
+}
+.navbar-brand{
+    font-size: 30px;
+}
+.navbar-inverse{
+    background-color: red;
+}
+footer{
+    color: black;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    background-color: red;
+    text-align-last: center
+}
+h5{
+    font-size: 18px;
+}
+
