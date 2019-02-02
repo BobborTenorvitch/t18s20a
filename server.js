@@ -190,7 +190,7 @@ function insertRecords(){
             Available: true,
             price: 15
         }},
-    {   productId:"Rainnbow",
+    {   productId:"Rainbow",
         category: "DVD",
         description: "Release on Oct 10 2017",
         item: {
@@ -291,7 +291,7 @@ function insertRecords(){
             comment:[
                 {
                     username: "jasmine",
-                    comment:"Been waiting for long",
+                    comment:"Been waiting for so long",
                     date: new Date('06 05 2018')
                 },
                 {
