@@ -279,7 +279,7 @@ function insertRecords(){
     ]
     db.Store.insertMany(storeSeed)
     .then(data => {
-        console.log("Innserted Store records",data);
+        console.log("Inserted Store records",data);
     })
     .catch(err => {
         console.log("Error in inserting records",err)

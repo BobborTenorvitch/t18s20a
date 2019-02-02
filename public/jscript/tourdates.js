@@ -6,7 +6,7 @@ $(document).ready(function(){
       "/api/events"
     , function(results,err){
         if(err != "success"){
-            console.log("Error in fetching data",err) ;
+            console.log("Error in fetching event data",err) ;
         } 
         else{
             console.log("The events are",results);
