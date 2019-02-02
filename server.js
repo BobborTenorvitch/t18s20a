@@ -158,7 +158,7 @@ function insertRecords(){
    ]
    db.Event.insertMany(eventSeed)
    .then(data =>{
-       console.log("Innserted event records",data);
+       console.log("Innerted event records",data);
    })
    .catch(err => {
        console.log("Error inn inserting records",err);
