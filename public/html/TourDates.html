@@ -13,6 +13,7 @@
   src="https://code.jquery.com/jquery-3.3.1.js"
   integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
   crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 <link rel="stylesheet" href="../css/style.css" />
 </head>
 
@@ -51,65 +52,18 @@
             </div>
         </nav>
     </div>
-    <div class="col">
-        <div class="row">
-            <div class="card text-white bg-dark mb-3">
-                <img class="card-img-top" src="bandpeeps.png" alt="Card image">
-                <div class="card-header">
-                    January 1, 2019
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Location: Venice, Paris</h5>
-                    <p class="card-text">New Year's Performance</p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="card">
-                <img class="card-img-top" src="bandpeeps.png" alt="Card image">
-                <div class="card-header">
-                    February 20, 2019
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Location: Mount Evans</h5>
-                    <p class="card-text">Mountain Magic performance</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <table class="table">
+    
+        <div class = "table-responsive">
+            <table class="table">
+                <thead>
 
-        <tbody>
-            <tr>
-                <th> Date</th>
-                <th> Event</th>
-            </tr>
-            <tr>
-                <td>
-                    January 1, 2018
-                </td>
-                <td>
-                    Mountain Magic Performance: Mount Evans;
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    February 20, 2019
-                </td>
-                <td>
-                    Water Works: Venice;
-                </td>
-            </tr>
-        </tbody>
-        <table class="container">
-            <thead>
+                </thead>
+                <tbody id="tourdates">
+                    
+                </tbody>
+            </table>
+        </div>
 
-            </thead>
-            <tbody id="tourdates">
-                
-            </tbody>
-        </table>
-    </table>
 
 
 
@@ -124,6 +78,7 @@
             Developed by Pranavkumar Kaliaperumal, Kavin Ramesh, Vincent Frazzini and Kesav Abhilash
         </h4>
     </footer>
+    
     <script src="../jscript/tourdates.js">
 
     </script>
