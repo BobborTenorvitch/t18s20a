@@ -55,14 +55,9 @@ const boardSeed = [
  db.Board.deleteMany({})
     .then(() => {
       console.log("Board collection removed");
-     try{
-        db.Board.insert(boardSeed)
-        }
-        catch(err){
-            console.log("Error in Inserting - Board",err);
-      }
-       
-    )
+  
+        db.Board.insertMany(boardSeed)
+    
     .then(data => {
        console.log(data, "Records inserted in Board");
        process.exit(0);
