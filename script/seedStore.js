@@ -117,9 +117,9 @@ const storeSeed = [
     }
 ]
 
-db.Store.remove({})
+db.Product.remove({})
    .then( () => 
-        db.Store.collection.insertMany(storeSeed)
+        db.Product.collection.insertMany(storeSeed)
     ).then((data) => {
         console.log(data,"New records inserted in Store");
         process.exit(0);
