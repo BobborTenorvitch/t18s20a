@@ -12,14 +12,17 @@ $(document).ready(function(){
             console.log("The events are",results);
             for(let i=0;i<results.length;i++)
             {
-                var dispDate = moment(results[i].date,"MM/DD/YYYY");
+                var dispDate = (results[i].date.slice(0,10));
                 if (i %2 === 0)
                 {
                     var clname = "even"
                 }
+                else {
+                    var clname = "odd"
+                }
                 $("#tourdates").append(`
-                <tr>
-                <td>${dispDate}   </td>
+                <tr class=${clname}>
+                <td>${dispDate}</td>
                 <td>${results[i].location}</td>
                 <td>${results[i].tickets.price}</td>
                 <td>${results[i].tickets.reserved}</td>

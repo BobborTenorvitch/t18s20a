@@ -127,11 +127,11 @@ const eventSeed = [{
          price: 23.55
  }}    
 ];
-db.Event.deleteMany({})
+db.Event.remove({})
    .then(() => {
        console.log("event collections removed");
      
-        db.Event.collection.bulkWrite(eventSeed)
+        db.Event.collection.insertMany(eventSeed)
        
      }).then(data => {
         console.log(data,"New records inserted in Events");

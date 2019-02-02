@@ -124,21 +124,15 @@ const storeSeed = [
     }
 ]
 
-db.Store.deleteMany({})
+db.Store.remove({})
    .then( () => {
        console.log("Store - Collections removed")
-       try{
         db.Store.collection.bulkWrite(storeSeed)
-       }
-       catch(err){
-           console.log("Error in innsertingn - store",err);
-       }
-        
    }).then(data => {
         console.log(data,"New records inserted in Store");
         process.exit(0);
     }).catch(err => {
         console.log("Error",err);
         process.exit(1);
- 
+
     });
