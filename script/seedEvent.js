@@ -130,12 +130,9 @@ const eventSeed = [{
 db.Event.deleteMany({})
    .then(() => {
        console.log("event collections removed");
-       try{
+     
         db.Event.collection.bulkWrite(eventSeed)
-       }
-       catch(err){
-        console.log("Error in Inserting - Event",err);
-       }
+       
      }).then(data => {
         console.log(data,"New records inserted in Events");
         process.exit(0);
