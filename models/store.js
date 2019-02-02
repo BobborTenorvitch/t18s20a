@@ -2,10 +2,10 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const storeSchema = new Schema({
-    productid: {
+    productId: {
         type: String,
         required: true,
-        unnique: true
+        unique: true
     },
     category: {
         type: String,

@@ -2,7 +2,7 @@ var path = require("path");
 
 module.exports = function(app){
     app.get("/band",function(req,res){
-           console.log("/ band")
+           console.log("/band")
            res.sendFile(path.join(__dirname,"../public/html/Band.html"));
     });
     app.get("/about",function(req,res){
@@ -28,9 +28,9 @@ module.exports = function(app){
     app.get("/TSA",function(req,res){
         res.sendFile(path.join(__dirname,"../public/html/TSA.html"));
     });
-    app.get("/*",function(req,res){
-        console.log("/ route");
-        res.sendFile(path.join(__dirname,"../public/html/index.html"));
-    });
+    // app.get("/*",function(req,res){
+    //     console.log("/ route");
+    //     res.sendFile(path.join(__dirname,"../public/html/index.html"));
+    // });
 
 }

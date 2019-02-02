@@ -3,6 +3,8 @@ var mongoose = require("mongoose");
 
 var PORT = 3000;
 
+var db = require("./models");
+
 var app = express();
 
 app.use(express.urlencoded({extended: true}));
@@ -13,12 +15,12 @@ app.use(express.static(__dirname + '/public'));
 
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_UI || "mongodb://localhost/bandsInTown",        
+mongoose.connect(process.env.MONGODB_UI || "mongodb://localhost/bandsInTown1",{ useNewUrlParser: true}, 
    () =>{
    
         console.log("Mongoose Connected");
-        insertRecords();}
-);
+        insertRecords();
+   });
 
 require('./routes/apiroutes.js')(app);
 require('./routes/htmlroutes.js')(app);
@@ -44,7 +46,7 @@ function insertRecords(){
    date8.setDate(date1.getDate()+98);
    date9.setDate(date1.getDate()+107);
    date10.setDate(date1.getDate()+137);
-   var records =  [{
+   var eventSeed =  [{
     date : date1,
     location: "Venice, Italy",
     tickets:{
@@ -140,8 +142,186 @@ function insertRecords(){
             reserved: 400,
             price: 23.55
     }}    
-
    ]
+   db.Event.insertMany(eventSeed)
+   .then(data =>{
+       console.log("Innserted event records",data);
+   })
+   .catch(err => {
+       console.log("Error inn inserting records",err);
+   });
+   //Store Seed
+   const storeSeed = [
+    {
+        productId:"Sunshine",
+        category: "DVD",
+        description: "Release on Sep 10 2018",
+        item: {
+            Quantity : 500,
+            Available: true,
+            price: 17
+        }},
+    {   productId:"Dream Land",
+        category: "DVD",
+        description: "Release on Aug 20 2018",
+        item: {
+            Quantity : 300,
+            Available: true,
+            price: 19
+        }},
+    {   productId:"Lost Town",
+        category: "DVD",
+        description: "Release on Feb 10 2017",
+        item: {
+            Quantity : 100,
+            Available: true,
+            price: 15
+        }},
+    {   productId:"Rainnbow",
+        category: "DVD",
+        description: "Release on Oct 10 2017",
+        item: {
+            Quantity : 54,
+            Available: true,
+            price: 15
+        }},
+    {   productId:"Lost Town",
+        category: "DVD",
+        description: "Release on Dec 10 2015",
+        item: {
+            Quantity : 110,
+            Available: true,
+            price: 15
+        }},
+    {
+        productId:"Fantastic",
+        category: "DVD",
+        description: "Release on Mar 10 2016",
+        item: {
+            Quantity : 170,
+            Available: true,
+            price: 15
+        }
+    },
+    {
+        productId:"Grand days",
+        category: "DVD",
+        description: "Release on Feb 19 2015",
+        item: {
+            Quantity : 120,
+            Available: true,
+            price: 15
+        },
+    },
+    {
+        productId:"Yeeterson",
+        category: "POSTER",
+        description: "Dimensions 25.7 cm * 37.8cm",
+        item: {
+            Quantity : 700,
+            Available: true,
+            price: 20
+        },
+    },
+    {
+        productId:"Lost Town - Poster",
+        category: "POSTER",
+        description: "Dimensions 10.1 in * 14.9 in",
+        item: {
+            Quantity : 90,
+            Available: true,
+            price: 20
+        },
+    },
+    {
+        productId:"Grand days - Poster",
+        category: "POSTER",
+        description: "Dimension 2'5 * 3'0' ",
+        item: {
+            Quantity : 120,
+            Available: true,
+            price: 12
+        },
+    },
+    {
+        productId:"Fantastic - Poster",
+        category: "POSTER",
+        description: "Dimension 816 m * 926 m",
+        item: {
+            Quantity : 96,
+            Available: true,
+            price: 11
+        },
+    },
+    {
+            productId:"Sunshine - Poster",
+            category: "POSTER",
+            description: "Dimensions 2' 5' * 3' 0' ",
+            item: {
+                Quantity : 50,
+                Available: true,
+                price: 15
+            }
+    }
+    ]
+    db.Store.insertMany(storeSeed)
+    .then(data => {
+        console.log("Innserted Store records",data);
+    })
+    .catch(err => {
+        console.log("Error in inserting records",err)
+    });
+    //Board seeds
+    const boardSeed = [
+        {
+            topic: "Performance at California",
+            comment:[
+                {
+                    username: "jasmine",
+                    comment:"Been waiting for long",
+                    date: new Date('06 05 2018')
+                },
+                {
+                username: "jasrose",
+                comment:"Heard that there is going to be a show in 2020",
+                date: new Date('06 06 2018')
+                },
+                {
+                    username: "jasmine",
+                    comment:"Where in California?",
+                    date: new Date('06 06 2018')
+                },
+                {
+                    username: "jasrose",
+                    comment:"I think San Fransisco",
+                    date: new Date('06 07 2018')
+                }
+            ]
+        }
+        ,
+        {
+            topic: "Grand Days is my favorite Album",
+             comment:[
+               {
+                   username: "jkrd",
+                    comment:"Yes mine too. Tried to buy it but always low in stock",
+                   date: new Date('06 05 2018')
+              },
+                {
+                username: "qwsk",
+                 comment:"I just ordered, it is in stock",
+                 date: new Date('06 06 2018')
+                 }
+             ]
+        },
+    ]
+     db.Board.insertMany(boardSeed)
+     .then(data => {
+         console.log("Inserted Board records",data);
+     })
+     .catch(err => {
+         console.log("Error in inserting board",err);
+     });
 }
   
 //Start the API Server
