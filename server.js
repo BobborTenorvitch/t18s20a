@@ -19,11 +19,24 @@ mongoose.connect(process.env.MONGODB_UI || "mongodb://localhost/bandsInTown1",{ 
    () =>{
    
         console.log("Mongoose Connected");
+        deleteRecords();
         insertRecords();
    });
 
 require('./routes/apiroutes.js')(app);
 require('./routes/htmlroutes.js')(app);
+
+function deleteRecords(){
+    db.Board.deleteMany({})
+    .then(result => console.log("Records in Board Deleted",result))
+    .catch(err => { console.log("Error in deleting Records",err)});
+    db.Event.deleteMany({})
+    .then(result => console.log("Records in Event Deleted",result))
+    .catch(err => { console.log("Error in deleting Records",err)});
+    db.Store.deleteMany({})
+    .then(result => console.log("Records in Board Deleted",result))
+    .catch(err => { console.log("Error in deleting Records",err)})
+}
 
 function insertRecords(){
    var date1 =  new Date();
